@@ -64,7 +64,7 @@ public class EQTLSimulator {
     List<List<AnnotSNP>> geneIndependentSnpList = new ArrayList<List<AnnotSNP>>();
 
     try {
-      option.readOptions("F:\\java\\SimulationTest\\param.txt");
+      option.readOptions("F:\\java\\SimulationTestCode\\param.txt");
       option.parseOptions();
       int simulationTime = option.permutationTime;
       simulator.loadGenotypes(option, geneFullSnpList, geneIndependentSnpList, geneIndList, ldMatrix);
@@ -170,7 +170,7 @@ public class EQTLSimulator {
     PlinkDataset plinkDataset = new PlinkDataset(plinkFileName + ".fam", plinkFileName + ".bim", plinkFileName + ".bed");
 
     GeneInforProcessor gip = new GeneInforProcessor();
-    Map<String, int[]> geneRegions = gip.readGenePos("F:\\java\\SimulationTest\\SeqGeneB36.txt", 100000, chroName);
+    Map<String, int[]> geneRegions = gip.readGenePos("F:\\java\\SimulationTestCode\\SeqGeneB36.txt", 100000, chroName);
     System.out.println("---------------Start to read genotypes from files----------------!");
     OpenIntIntHashMap indexGenotypePosMap = new OpenIntIntHashMap();
     //read genotypes from files
