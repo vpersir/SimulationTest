@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/commons-math-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/EJML-equation-0.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/colt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/REngine.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/EJML-core-0.26.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ssj-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jsc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/optimization.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Rserve.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
