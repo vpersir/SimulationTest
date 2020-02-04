@@ -2051,7 +2051,7 @@ public class EQTLSimulator {
   }
 
   public List<AnnotSNP> iterativeConditionalECSVar(RConnection rcon, double[] pValues, double[] chisquares, DoubleMatrix2D orgMatrix,
-                                                  List<List<AnnotSNP>> blockedVariantLists, double pCut, String type) throws Exception {
+                                                  List<List<AnnotSNP>> blockedVariantLists, List<AnnotSNP> qtlSnpList, double pCut, String type) throws Exception {
 
     //double pCut0 = 1.0E-5;
     //double cellLinepCut = 1.0E-3;
@@ -2071,7 +2071,12 @@ public class EQTLSimulator {
       for (int j = 0; j < varListLength; ++j) {
         AnnotSNP var = blockedVariantList.get(j);
         views[j] = var.index;
-        order.add(new double[]{j, -Math.log10(pValues[var.index])});
+        //order.add(new double[]{j, -Math.log10(pValues[var.index])});
+        if (qtlSnpList.contains(var)) {
+          order.add(new double[]{j, 10});
+        } else {
+          order.add(new double[]{j, 1});
+        }
       }
       Collections.sort(order, new DoubleArrayListComparatorR(1));
 
@@ -2365,7 +2370,7 @@ public class EQTLSimulator {
         // r or r-square?
         slidingWindowPartion(geneFullSnpList.get(g), blockedVariants, ldCorr, 50, 0.15);
         //System.out.println(blockedVariants.size());
-        List<AnnotSNP> results = iterativeConditionalECSVar(rcon, pValues, chisquares, ldCorr, blockedVariants, 5 * Math.pow(10, -3), type);
+        List<AnnotSNP> results = iterativeConditionalECSVar(rcon, pValues, chisquares, ldCorr, blockedVariants, qtlSnpList, 5 * Math.pow(10, -3), type);
 
         System.out.println("selected rsid(" + type + "): ");
         for (int i = 0; i < results.size(); ++i) {
