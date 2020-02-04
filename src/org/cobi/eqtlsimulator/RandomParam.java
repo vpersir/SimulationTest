@@ -45,7 +45,7 @@ public class RandomParam {
             info[4] += Integer.toString(qtl_num);
 
             BufferedReader br = null;
-            br = new BufferedReader(new FileReader(new File("F:\\java\\SimulationTestCode\\SeqGeneB36.txt")));
+            br = new BufferedReader(new FileReader(new File("F:\\java\\SimulationTest\\SeqGeneB36.txt")));
             String line;
             int gene_count = 0;
             boolean region_flag = false;
@@ -100,7 +100,7 @@ public class RandomParam {
             info[7] += Integer.toString(permutationTime);
             info[8] += Double.toString(genet);
 
-            BufferedWriter bw = new BufferedWriter(new FileWriter(new File("F:\\java\\SimulationTestCode\\param.txt")));
+            BufferedWriter bw = new BufferedWriter(new FileWriter(new File("F:\\java\\SimulationTest\\param.txt")));
             for (int i = 0; i < info.length; i++) {
                 bw.write(option[i] + info[i] + "\r\n");
             }
